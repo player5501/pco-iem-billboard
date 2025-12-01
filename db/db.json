@@ -1,0 +1,89 @@
+{
+  "people": [
+    {
+      "id": "michael-leyde-0",
+      "name": "Michael Leyde",
+      "photo": "https://avatars.planningcenteronline.com/uploads/person/57765986-1564682860/avatar.5.jpg",
+      "originalClassification": "Vox 1"
+    },
+    {
+      "id": "andrew-kafchinski-1",
+      "name": "Andrew Kafchinski",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/AK.png",
+      "originalClassification": "Keys"
+    },
+    {
+      "id": "dann-melinetskiy-2",
+      "name": "Dann Melinetskiy",
+      "photo": "https://avatars.planningcenteronline.com/uploads/person/177551110-1757880143/avatar.1.jpg",
+      "originalClassification": "EG2"
+    },
+    {
+      "id": "jeremiah-mcdonald-3",
+      "name": "Jeremiah McDonald",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/JM.png",
+      "originalClassification": "AG"
+    },
+    {
+      "id": "danielle-jireh-hinson-4",
+      "name": "Danielle Jireh Hinson",
+      "photo": "https://avatars.planningcenteronline.com/uploads/person/81261159-1598330096/avatar.12.jpeg",
+      "originalClassification": "Vox 5"
+    },
+    {
+      "id": "alina-sushchik-5",
+      "name": "Alina Sushchik",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/AS.png",
+      "originalClassification": "Vox 6"
+    },
+    {
+      "id": "liz-calderon-6",
+      "name": "Liz Calderon",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/LC.png",
+      "originalClassification": "Vox 7"
+    },
+    {
+      "id": "lori-llewellyn-7",
+      "name": "Lori Llewellyn",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/LL.png",
+      "originalClassification": "Vox 8"
+    },
+    {
+      "id": "eric-graceson-8",
+      "name": "Eric Graceson",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/EG.png",
+      "originalClassification": "Bass"
+    },
+    {
+      "id": "garrett-ohm-9",
+      "name": "Garrett Ohm",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/GO.png",
+      "originalClassification": "Drums"
+    },
+    {
+      "id": "nadia-covey-10",
+      "name": "Nadia Covey",
+      "photo": "https://avatars.planningcenteronline.com/uploads/person/115339592-1664589594/avatar.11.png",
+      "originalClassification": "Strings"
+    },
+    {
+      "id": "cody-coombs-11",
+      "name": "Cody Coombs",
+      "photo": "https://avatars.planningcenteronline.com/uploads/initials/CC.png",
+      "originalClassification": "Unassigned"
+    }
+  ],
+  "assignments": {
+    "Vox 1": "michael-leyde-0",
+    "Keys": "andrew-kafchinski-1",
+    "EG2": "dann-melinetskiy-2",
+    "AG": "jeremiah-mcdonald-3",
+    "Vox 5": "danielle-jireh-hinson-4",
+    "Vox 6": "alina-sushchik-5",
+    "Vox 7": "liz-calderon-6",
+    "Vox 8": "lori-llewellyn-7",
+    "Drums": "garrett-ohm-9",
+    "Strings": "nadia-covey-10",
+    "Bass": "eric-graceson-8"
+  }
+}
