@@ -1,0 +1,65 @@
+services:
+  pco-iem-interface:
+    image: ghcr.io/player5501/pco-iem-interface:latest
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - API_URL=http://pco-api:3000/api/kl-sunday-latest
+      - API_URL_EVENT=http://pco-api:3000/api/band/
+    depends_on:
+      - pco-api
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3001/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  pco-api:
+    image: ghcr.io/player5501/pco-cli:latest
+    container_name: pco-api
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - PCO_APPLICATION_ID=${PCO_APPLICATION_ID}
+      - PCO_SECRET=${PCO_SECRET}
+      - MOCK_API=${MOCK_API:-false}
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  iem-server:
+    image: ghcr.io/player5501/pco-iem-server:latest
+    ports:
+      - "4000:4000"
+    environment:
+      - SOURCE_API=http://pco-iem-interface:3001/api/classifications
+      - ALT_SOURCE_API=http://pco-iem-interface:3001/api/event/
+    volumes:
+      - ./db:/app/db
+    depends_on:
+      - pco-iem-interface
+    restart: unless-stopped
+
+  iem-web:
+    image: ghcr.io/player5501/pco-iem-web:latest
+    ports:
+      - "8080:80"
+    depends_on:
+      - iem-server
+    restart: unless-stopped
+
+  billboard:
+    image: ghcr.io/player5501/pco-iem-billboard:main-b0a14fc
+    ports:
+      - "8081:80"
+    depends_on:
+      - iem-server
+    restart: unless-stopped
