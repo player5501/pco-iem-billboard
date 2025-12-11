@@ -74,6 +74,32 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    let timeoutId
+
+    const handleActivity = () => {
+      document.body.classList.remove('hide-cursor')
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(() => {
+        document.body.classList.add('hide-cursor')
+      }, 1000)
+    }
+
+    // Initial trigger to start the timer
+    handleActivity()
+
+    window.addEventListener('mousemove', handleActivity)
+    window.addEventListener('mousedown', handleActivity)
+    window.addEventListener('keydown', handleActivity)
+
+    return () => {
+      window.removeEventListener('mousemove', handleActivity)
+      window.removeEventListener('mousedown', handleActivity)
+      window.removeEventListener('keydown', handleActivity)
+      clearTimeout(timeoutId)
+    }
+  }, [])
+
   if (loading) return <div className="loading">Loading...</div>
   if (error) return <div className="error">Error: {error}</div>
 
